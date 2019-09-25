@@ -1,6 +1,6 @@
 import AppComponent from './App.vue';
 import store from './store';
-import HomeComponent from './views/home/home.view.vue';
+import VehiclesView from './views/vehicles/vehicles.view.vue';
 
 export default {
   path: '',
@@ -8,9 +8,9 @@ export default {
   component: AppComponent,
   children: [
     {
-      path: 'home',
-      component: HomeComponent,
-      name: 'home',
+      path: 'vehicles',
+      component: VehiclesView,
+      name: 'vehicles',
     },
   ],
   beforeEnter(from, to, next) {

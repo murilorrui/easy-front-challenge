@@ -60,7 +60,7 @@ export default {
     login() {
       if (this.$refs.form.validate()) {
         this.loginService.login(this.payload).then(() => {
-          this.$router.push({ name: 'home' });
+          this.$router.push({ name: 'vehicles' });
         });
       }
     },

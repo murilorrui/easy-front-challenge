@@ -14,7 +14,7 @@
             wrap
             align-center
             )
-            v-flex.xs8.sm10
+            v-flex.xs8.sm11
               v-text-field(
                 :counter="7"
                 label="Placa"
@@ -22,7 +22,7 @@
                 @blur="resetValidation"
                 :rules="plateRules"
                 )
-            v-flex.xs4.sm2
+            v-flex.xs4.sm1
               v-btn(
                 block
                 rounded
@@ -60,7 +60,7 @@ export default {
       this.$refs.form.reset();
     },
     resetValidation() {
-      if (this.plate.length === 0) {
+      if (!this.plate || this.plate.length === 0) {
         this.$refs.form.resetValidation();
       }
     },

@@ -1,14 +1,15 @@
-import MainComponent from '@/main.vue';
 import LoginComponent from './login.view.vue';
+import store from '@/store';
 
 export default {
-  path: '',
-  component: MainComponent,
-  children: [
-    {
-      path: '/login',
-      component: LoginComponent,
-      name: 'login',
-    },
-  ],
+  path: '/login',
+  component: LoginComponent,
+  name: 'login',
+  beforeEnter(from, to, next) {
+    if (store.getters.token) {
+      next({ name: 'vehicles' });
+      return;
+    }
+    next();
+  },
 };
