@@ -1,5 +1,10 @@
 # front-challenge
 
+### Importante
+```
+Para deslogar precisa limpar o localstorage
+```
+
 ## Instalar dependências
 ```
 yarn

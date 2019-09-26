@@ -46,8 +46,8 @@ import LoginService from '@/services/login';
 export default {
   data: () => ({
     payload: {
-      email: 'frontend-dev@easycarros.com',
-      password: 'Fr0nt3ndR0ck5!',
+      email: '',
+      password: '',
     },
     emailRules: [
       v => !!v || 'Esse campo e obrigatorio',
