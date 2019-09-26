@@ -23,8 +23,11 @@
             v-text-field(
               required
               label="password"
+              :append-icon="showPass ? 'visibility' : 'visibility_off'"
+              :type="showPass ? 'text' : 'password'"
               :rules="passwordRules"
               v-model="payload.password"
+              @click:append="showPass = !showPass"
               )
           v-card-actions
             v-btn(
@@ -55,6 +58,7 @@ export default {
     ],
     valid: false,
     loginService: LoginService,
+    showPass: false,
   }),
   methods: {
     login() {

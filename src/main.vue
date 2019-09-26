@@ -22,6 +22,7 @@ export default {
     snackbar: {
       color: '',
       message: '',
+      token: '',
     },
     showSnackbar: false,
   }),
@@ -29,17 +30,23 @@ export default {
     toggleSnackBar(value) {
       this.showSnackbar = value;
     },
+    getToken() {
+      if (localStorage.getItem('TOKEN')) {
+        this.token = localStorage.getItem('TOKEN');
+        store.commit('TOKEN', this.token);
+        this.$router.push({ name: 'vehicles' });
+      }
+    },
+    startSnackBar() {
+      snackbarEvent.eventBus.$on('show-snackbar', (payload) => {
+        this.showSnackbar = true;
+        this.snackbar = payload;
+      });
+    },
   },
   created() {
-    if (localStorage.getItem('TOKEN')) {
-      const token = localStorage.getItem('TOKEN');
-      store.commit('TOKEN', token);
-      this.$router.push({ name: 'vehicles' });
-    }
-    snackbarEvent.eventBus.$on('show-snackbar', (payload) => {
-      this.showSnackbar = true;
-      this.snackbar = payload;
-    });
+    this.getToken();
+    this.startSnackBar();
   },
 };
 </script>

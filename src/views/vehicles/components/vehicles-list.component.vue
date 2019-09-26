@@ -80,6 +80,7 @@ export default {
       this.vehicleDelete = item.id;
     },
     deleteCofirm() {
+      this.modalDeleteVehicle = false;
       this.vehicleService.deleteVehicle(this.vehicleDelete).then(() => {
         this.getVehicles();
       });
@@ -91,7 +92,11 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
+  .v-data-footer__select, .v-select
+    margin: 6px !important
+  .v-data-footer__pagination
+    margin: 0 !important
   .vehicles-list
     &__table
       text-transform: uppercase

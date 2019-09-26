@@ -10,11 +10,13 @@
       slot="actions"
       )
       v-btn(
+        elevation="0"
         @click="toggleModal(false)"
         ) não
       v-spacer
       v-btn(
         dark
+        elevation="0"
         @click="deleteCofirm"
         :color="$vuetify.theme.themes.light.secondary"
         ) sim
@@ -43,7 +45,6 @@ export default {
       this.$emit('toggle-modal', value);
     },
     deleteCofirm() {
-      this.$emit('toggle-modal', false);
       this.$emit('delete-confirm');
     },
   },

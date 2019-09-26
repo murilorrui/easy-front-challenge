@@ -52,11 +52,11 @@ export default {
       if (this.$refs.form.validate()) {
         this.vehicleService.addVehicle(this.plate).then(() => {
           this.getVehicles();
-          this.reset();
+          this.formReset();
         });
       }
     },
-    reset() {
+    formReset() {
       this.$refs.form.reset();
     },
     resetValidation() {
