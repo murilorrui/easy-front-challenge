@@ -1,34 +1,15 @@
-# easy
+# front-challenge
 
-## Project setup
+## Instalar dependências
 ```
-yarn install
+yarn
 ```
-
-### Compiles and hot-reloads for development
+### Subir aplicação na porta 3000
 ```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
+yarn serve --port 3000
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your unit tests
+### Rodar unit test
 ```
 yarn run test:unit
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
